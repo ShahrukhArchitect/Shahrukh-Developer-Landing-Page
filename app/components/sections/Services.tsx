@@ -27,27 +27,29 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-5 md:py-24 bg-[var(--background)] relative overflow-hidden">
+    <section id="services" className="py-12 md:py-24 bg-[var(--background)] relative overflow-hidden">
       {/* Background Decorative Element */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-[#FFD700]/5 blur-[100px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">
-        <div className="md:mb-20 mb-5 text-center lg:text-left">
+        <div className="md:mb-20 mb-10 text-center lg:text-left">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black font-jakarta text-[var(--foreground)] tracking-tight leading-tight"
+            // text-slate-900 (for light) and dark:text-white (for dark) force kar diya hai
+            className="text-4xl md:text-6xl font-black font-jakarta text-slate-900 dark:text-white tracking-tight leading-tight"
           >
             Architecting for <br />
             <span className="gold-gradient">Intelligence & ROI</span>
-          </motion.h2 >
+          </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-slate-500 mt-6 text-lg font-medium italic"
+            // text-slate-600 (for light) and dark:text-slate-400 (for dark)
+            className="text-slate-600 dark:text-slate-400 mt-6 text-lg font-medium italic"
           >
             I bridge the gap between outdated manual workflows and the AI-driven future. No generic templates, just high-performance systems designed to scale your operations.
           </motion.p>
@@ -62,6 +64,7 @@ const Services = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -12 }}
+              /* CHANGE HERE: bg-white ko 'light' context ke liye rehne diya, lekin dark:bg-[#0B0E14] ko force kiya */
               className="relative p-8 md:p-10 rounded-[40px] bg-white dark:bg-[#0B0E14] border border-slate-200 dark:border-white/5 overflow-hidden group shadow-xl hover:shadow-[#FFD700]/5 transition-all duration-500"
             >
               {/* Hover Glow */}
@@ -75,7 +78,7 @@ const Services = () => {
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-black mb-4 text-[var(--foreground)] tracking-tight">
+                <h3 className="text-2xl font-black mb-4 text-white tracking-tight">
                   {service.title}
                 </h3>
 
@@ -84,9 +87,9 @@ const Services = () => {
                 </p>
 
                 <div className="mt-auto pt-8 flex items-center gap-2 text-[#FFD700] font-bold text-sm 
-  opacity-100 lg:opacity-0 lg:group-hover:opacity-100 
-  transition-all duration-300 transform 
-  lg:translate-x-[-10px] lg:group-hover:translate-x-0 cursor-pointer"
+                  opacity-100 lg:opacity-0 lg:group-hover:opacity-100 
+                  transition-all duration-300 transform 
+                  lg:translate-x-[-10px] lg:group-hover:translate-x-0 cursor-pointer"
                 >
                   <span>BOOK A DISCOVERY CALL</span>
                   <span className="text-lg">→</span>
