@@ -2,34 +2,33 @@
 
 @layer base {
   :root {
-    /* Light Mode Variables */
-    --background: #F8FAFC;
-    --foreground: #0F172A;
-    --card-bg: #FFFFFF;
-    --text-muted: #475569;
-    --primary-gold: #B8860B;
-    /* Light mode mein gold thora dark rakha hai readability ke liye */
-    --accent-glow: rgba(184, 134, 11, 0.1);
+    /* Pure Dark Mode Variables only */
+    --background: #030406;
+    --foreground: #FFFFFF;
+    --card-bg: #0B0E14;
+    --text-muted: #94A3B8;
+    --primary-gold: #FFD700;
+    --accent-glow: rgba(255, 215, 0, 0.15);
 
     --fs-h1: 4.5rem;
     --fs-h2: 2.5rem;
     --fs-body: 1rem;
   }
 
-  .dark {
-    /* Dark Mode Variables */
-    --background: #030406;
-    /* Pitch Black for elite look */
-    --foreground: #FFFFFF;
-    --card-bg: #111418;
-    --text-muted: #94A3B8;
-    --primary-gold: #FFD700;
-    --accent-glow: rgba(255, 215, 0, 0.15);
-  }
-
   html {
     scroll-behavior: smooth;
+    background-color: #030406;
   }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
+
+/* Gold Gradient Utility */
+.gold-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#FFD700] via-[#FDB931] to-[#FFD700];
 }
 
 @layer base {
