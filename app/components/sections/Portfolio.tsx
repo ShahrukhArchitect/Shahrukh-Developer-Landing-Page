@@ -37,7 +37,8 @@ const Portfolio = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/api/portfolio");
+        // Aapka Hostinger ka path jahan ye file pari hai
+        const response = await fetch("https://chattoncapital.com/portfolio-api.php");
         const data = await response.json();
         setProjects(data);
       } catch (err) {
@@ -90,12 +91,14 @@ const Portfolio = () => {
               return (
                 <motion.div
                   key={project.id}
-                  className="w-[320px] md:w-[500px] bg-white dark:bg-[#0B0E14] rounded-[45px] overflow-hidden border border-slate-200 dark:border-white/5 flex flex-col h-[600px] shadow-2xl shadow-black/5 group"
+                  // bg-white nikal kar bg-[#0B0E14] kiya aur border fix kiya
+                  className="w-[320px] md:w-[500px] bg-[#0B0E14] rounded-[45px] overflow-hidden border border-white/5 flex flex-col h-[600px] shadow-2xl group"
                 >
                   {/* Image Section */}
-                  <div className="h-[55%] bg-slate-100 dark:bg-[#030712] relative overflow-hidden">
+                  <div className="h-[55%] bg-[#030712] relative overflow-hidden">
                     <img
-                      src={`http://127.0.0.1:8000/uploads/portfolio/${project.banner_image}`}
+                      // Localhost URL ko apne live domain se zaroor replace kariyega
+                      src={`https://chattoncapital.com/uploads/${project.banner_image}`}
                       alt={project.name}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 pointer-events-none"
                       onError={(e) => {
@@ -118,21 +121,24 @@ const Portfolio = () => {
                       <span className="text-[10px] font-black text-[#FFD700] uppercase tracking-[0.3em]">
                         {project.category}
                       </span>
-                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                      <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
                         {project.name}
                       </span>
                     </div>
 
-                    <h3 className="text-2xl font-black mb-4 text-slate-900 dark:text-slate-100 group-hover:text-[#FFD700] transition-colors duration-300 leading-tight">
+                    {/* Heading - text-slate-900 hata kar text-white force kar diya */}
+                    <h3 className="text-2xl font-black mb-4 text-white group-hover:text-[#FFD700] transition-colors duration-300 leading-tight">
                       {project.title}
                     </h3>
 
-                    <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm font-medium line-clamp-3 mb-6">
+                    {/* Description - text-slate-400 for better contrast */}
+                    <p className="text-slate-400 leading-relaxed text-sm font-medium line-clamp-3 mb-6">
                       {cleanHTML(project.short_description)}
                     </p>
 
-                    <div className="mt-auto pt-6 border-t border-slate-100 dark:border-white/5">
-                      <button className="flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 dark:text-white group/btn transition-all">
+                    {/* Bottom Section - Border aur Button color fix */}
+                    <div className="mt-auto pt-6 border-t border-white/5">
+                      <button className="flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.2em] text-white group/btn transition-all">
                         <span className="border-b-2 border-[#FFD700] pb-1">Explore Case Study</span>
                         <span className="bg-[#FFD700] text-black rounded-full w-8 h-8 flex items-center justify-center group-hover/btn:translate-x-2 transition-transform duration-300">→</span>
                       </button>
