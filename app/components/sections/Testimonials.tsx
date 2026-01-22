@@ -100,18 +100,21 @@ const Testimonials = () => {
                     {duplicatedReviews.map((rev, index) => (
                         <div
                             key={index}
-                            className="w-[350px] md:w-[450px] shrink-0 p-8 rounded-[40px] bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/5 relative group"
+                            // bg-slate-50 nikal kar bg-[#111418] (dark card) laga diya hai
+                            className="w-[350px] md:w-[450px] shrink-0 p-8 rounded-[40px] bg-[#111418] border border-white/5 relative group"
                         >
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="w-12 h-12 rounded-2xl bg-[#FFD700]/10 border border-[#FFD700]/20 flex items-center justify-center font-bold text-[#FFD700] text-sm">
                                     {rev.avatar}
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-[var(--foreground)] text-lg">{rev.name}</h4>
+                                    {/* text-[var(--foreground)] nikal kar text-white force kar diya */}
+                                    <h4 className="font-bold text-white text-lg">{rev.name}</h4>
                                     <p className="text-xs text-slate-500 font-medium uppercase tracking-widest">{rev.role}</p>
                                 </div>
                             </div>
-                            <p className="text-slate-600 dark:text-slate-400 italic leading-relaxed text-sm md:text-base whitespace-normal">
+                            {/* text-slate-600 nikal kar text-slate-400 kar diya taake dark bg par nazar aaye */}
+                            <p className="text-slate-400 italic leading-relaxed text-sm md:text-base whitespace-normal">
                                 "{rev.text}"
                             </p>
                             <div className="mt-6 flex gap-1">

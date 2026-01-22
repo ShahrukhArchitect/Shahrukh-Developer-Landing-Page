@@ -53,15 +53,16 @@ const FAQ = () => {
                             <div
                                 key={i}
                                 className={`border rounded-[24px] transition-all duration-300 overflow-hidden ${isOpen
-                                    ? "border-[#FFD700] bg-white dark:bg-[#111827] shadow-lg shadow-yellow-500/5"
-                                    : "border-slate-200 dark:border-white/5 bg-transparent hover:border-slate-300 dark:hover:border-white/10"
+                                        ? "border-[#FFD700] bg-[#0B0E14] shadow-lg shadow-yellow-500/5" // bg-white hata kar dark kar diya
+                                        : "border-white/5 bg-transparent hover:border-white/10" // light border hata di
                                     }`}
                             >
                                 <button
                                     onClick={() => setActiveIndex(isOpen ? null : i)}
                                     className="w-full p-6 text-left flex justify-between items-center outline-none"
                                 >
-                                    <span className={`font-bold text-lg transition-colors ${isOpen ? "text-[var(--primary-gold)]" : "text-[var(--foreground)]"}`}>
+                                    {/* text-[var(--foreground)] ko text-white kar diya */}
+                                    <span className={`font-bold text-lg transition-colors ${isOpen ? "text-[#FFD700]" : "text-white"}`}>
                                         {faq.q}
                                     </span>
                                     <motion.span
@@ -81,7 +82,8 @@ const FAQ = () => {
                                             exit={{ height: 0, opacity: 0 }}
                                             transition={{ duration: 0.3, ease: "easeInOut" }}
                                         >
-                                            <div className="px-6 pb-6 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-black/5 dark:border-white/5 pt-4 mx-6">
+                                            {/* text-slate-600 ko text-slate-400 kar diya aur border color fix kiya */}
+                                            <div className="px-6 pb-6 text-slate-400 leading-relaxed border-t border-white/5 pt-4 mx-6">
                                                 {faq.a}
                                             </div>
                                         </motion.div>

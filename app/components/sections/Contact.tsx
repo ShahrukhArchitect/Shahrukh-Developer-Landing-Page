@@ -4,7 +4,7 @@ import { InlineWidget } from "react-calendly";
 
 const Contact = () => {
     return (
-        <section id="contact" className="py-24 bg-[#030712] transition-colors duration-300">
+        <section id="contact" className="py-24 bg-[#030406]">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
@@ -15,7 +15,7 @@ const Contact = () => {
                             <span className="gold-gradient italic">Automate</span> your <br />
                             <span className="text-[#FFD700] underline decoration-wavy">Operations</span>
                         </h2>
-                        <p className="text-slate-500 mt-6 text-lg max-w-md font-medium">
+                        <p className="text-slate-400 mt-6 text-lg max-w-md font-medium">
                             Stop fighting with manual workflows. Select a time below to discuss how we can scale your business with custom solutions.
                         </p>
 
@@ -37,22 +37,24 @@ const Contact = () => {
                         </div>
                     </div>
 
-                    {/* Right Side: Direct Calendly Widget */}
+                    {/* Right Side: Original Calendly Widget */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="bg-[#0B0E14] min-h-[650px] rounded-[40px] border-2 border-[#FFD700]/20 shadow-[0_0_50px_rgba(255,215,0,0.05)] overflow-hidden"
+                        // Card background ko white kar diya taake original calendly look miley
+                        className="bg-white min-h-[650px] rounded-[40px] border-4 border-[#FFD700]/20 shadow-2xl overflow-hidden"
                     >
-                        <InlineWidget 
-                            url="https://calendly.com/shahrukhdeveloper101/30min"  
+                        <InlineWidget
+                            url="https://calendly.com/shahrukhdeveloper101/30min"
                             styles={{ height: '650px', width: '100%' }}
+                            // pageSettings ko default (white) par reset kar diya
                             pageSettings={{
-                                backgroundColor: '0b0e14',
+                                backgroundColor: 'ffffff',
                                 hideEventTypeDetails: false,
                                 hideLandingPageDetails: false,
-                                primaryColor: 'ffd700',
-                                textColor: 'ffffff'
+                                primaryColor: '006bff', // Original Calendly Blue ya ffd700 jo aap chahein
+                                textColor: '1a1a1a'
                             }}
                         />
                     </motion.div>

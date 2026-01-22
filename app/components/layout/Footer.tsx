@@ -8,14 +8,14 @@ const Footer = () => {
     <footer className="py-12 bg-[var(--background)] border-t border-black/5 dark:border-white/5 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          
+
           {/* Brand Column */}
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="group flex items-center gap-2 mb-6">
               <div className="w-8 h-8 bg-[#FFD700] rounded-lg rotate-45 flex items-center justify-center">
                 <span className="text-black font-black -rotate-45 text-xs">S</span>
               </div>
-              <span className="text-xl font-bold tracking-tighter font-jakarta dark:text-white text-slate-900">
+              <span className="text-xl font-bold tracking-tighter font-jakarta text-white">
                 SHAH<span className="text-[#FFD700]">RUKH</span>
               </span>
             </Link>
@@ -68,7 +68,7 @@ const Footer = () => {
             © 2020 - {currentYear} Shahrukh Butt. AI Systems Architect.
           </p>
           <div className="flex gap-8 text-xs text-slate-500">
-             <span className="text-[#FFD700]/50 tracking-widest uppercase font-bold">Available for Q1 2026 Projects</span>
+            <span className="text-[#FFD700]/50 tracking-widest uppercase font-bold">Available for Q1 2026 Projects</span>
           </div>
         </div>
       </div>

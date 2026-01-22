@@ -38,7 +38,7 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             // text-slate-900 (for light) and dark:text-white (for dark) force kar diya hai
-            className="text-4xl md:text-6xl font-black font-jakarta text-slate-900 dark:text-white tracking-tight leading-tight"
+            className="text-4xl md:text-6xl font-black font-jakarta text-slate-900 text-white tracking-tight leading-tight"
           >
             Architecting for <br />
             <span className="gold-gradient">Intelligence & ROI</span>
@@ -65,7 +65,7 @@ const Services = () => {
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -12 }}
               /* CHANGE HERE: bg-white ko 'light' context ke liye rehne diya, lekin dark:bg-[#0B0E14] ko force kiya */
-              className="relative p-8 md:p-10 rounded-[40px] bg-white dark:bg-[#0B0E14] border border-slate-200 dark:border-white/5 overflow-hidden group shadow-xl hover:shadow-[#FFD700]/5 transition-all duration-500"
+              className="relative p-8 md:p-10 rounded-[40px] bg-dark overflow-hidden group shadow-xl hover:shadow-[#FFD700]/5 transition-all duration-500"
             >
               {/* Hover Glow */}
               <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
